@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.datePicker {
+  height: 40px !important; /* Set height */
+  width: 100% !important; /* Set width */
+  
+  svg {
+    font-size: 10px !important; /* Icon size */
+  }
+  
+  input {
+    font-size: 12px; /* Input font size */
+    font-family: "Open Sans", sans-serif !important; /* Input font family */
+  }
+}
+
