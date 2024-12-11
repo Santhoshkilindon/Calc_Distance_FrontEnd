@@ -11,9 +11,22 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../URL/URL";
+import { useLocation } from "react-router-dom";
 
-const CarDetails = ({ duration, distance, tollCount, startLocation, endLocation, selectedDate, passenger, luggage, returnDate}) => {
+const CarDetails = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const {
+    duration,
+    distance,
+    tollCount,
+    startLocation,
+    endLocation,
+    selectedDate,
+    passenger,
+    luggage,
+    returnDate
+  } = location.state || {};
 
   const getCarDetails = (passenger) => [
     {
