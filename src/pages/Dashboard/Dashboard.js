@@ -325,7 +325,7 @@ const handleGetTaxiClick = () => {
     paddingBottom: '20px',
     backgroundColor: 'rgba(255, 255, 255, 0.6)',
     borderRadius: 15,
-    padding:{xs:'30px'},
+    padding:{xs:'30px', md:'20px'},
     boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
     justifyContent: "center",  
     alignSelf:"center",
@@ -333,8 +333,8 @@ const handleGetTaxiClick = () => {
   }}
 >
   <Grid item xs={12} sm={3} md={1}>
-    <FormControl style={{ minWidth: "100%" }}>
-      <InputLabel sx={{marginLeft:{xs:-2, sm: 0}}}>Trip Type</InputLabel>
+    <FormControl variant="standard" style={{ minWidth: "100%"}}>
+      <InputLabel>Trip Type</InputLabel>
       <Select 
         variant="standard" 
         value={tripType} 
@@ -360,10 +360,9 @@ const handleGetTaxiClick = () => {
             id="standard-from" 
             variant="standard" 
             label="From"
-            fullWidth
             placeholder="Select PickUp Location"
             sx={{
-              marginLeft:{md:3}
+              marginLeft:{md:2}
             }} 
           />
         </FormControl>
@@ -386,7 +385,13 @@ const handleGetTaxiClick = () => {
           fullWidth
           placeholder="Select Drop Location"
           sx={{
-            marginLeft:{md:4}
+            marginLeft:{md:2},
+          //   "& .MuiInput-underline:before": {
+          //     borderBottom: "none", // Removes the bottom line (underline) on focus
+          //   },
+          //  "& .MuiInput-underline:after": {
+          //    borderBottom: "none", // Removes the bottom line (underline) after focus
+          //  }
           }}
         />
       </Autocomplete>
@@ -404,10 +409,10 @@ const handleGetTaxiClick = () => {
         <TextField
           label="Pickup Date"
           variant="standard" 
-          value={selectedDate ? selectedDate.format("DD-MM-YYYY") : ""}
+          value={selectedDate ? selectedDate.format("DD/MM/YYYY") : ""}
           onClick={handleTextFieldClick} 
           readOnly 
-          sx={{ cursor: "pointer", width: "100%", marginLeft:{md:4} }}
+          sx={{ width:{md:"50%", xs:'100%'}, marginLeft:{md:4} }}
         />
         {isPickerOpen && (
           <DatePicker
@@ -433,8 +438,8 @@ const handleGetTaxiClick = () => {
   </Grid>
 
   <Grid item xs={12} sm={3} md={1}>
-    <FormControl variant="outlined" fullWidth>
-      <InputLabel sx={{marginLeft:{xs:-2, sm: 0}}}>Select Time</InputLabel>
+    <FormControl fullWidth variant="standard" sx={{marginLeft:{md:-7}}}>
+      <InputLabel>Select Time</InputLabel>
       <Select
         variant="standard" 
         value={selectedTime}
@@ -464,7 +469,7 @@ const handleGetTaxiClick = () => {
           value={returnDate ? returnDate.format("DD-MM-YYYY") : ""}
           onClick={handleRetunDateClick} 
           readOnly 
-          sx={{ cursor: "pointer", width: "100%", marginLeft:{md:4} }}
+          sx={{ cursor: "pointer", width: {md:"60%", xs:'100%'} }}
         />
             <DatePicker
               open={returnPickerOpen}
